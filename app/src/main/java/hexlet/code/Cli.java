@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 
 public class Cli {
-    public static String playerGreetings(BufferedReader bufferedReader) throws IOException {
+    public static void playerGreetings(BufferedReader bufferedReader) throws IOException {
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
 
@@ -12,6 +12,5 @@ public class Cli {
 
         System.out.println("Hello, " + playerName + "!");
 
-        return playerName;
     }
 }
