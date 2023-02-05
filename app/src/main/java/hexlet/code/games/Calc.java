@@ -35,7 +35,7 @@ public class Calc {
 
             System.out.print("Your answer: ");
 
-            String answerString = bufferedReader.readLine();
+            String answerString = bufferedReader.readLine().trim();
             int playerAnswer;
             try {
                 playerAnswer = Integer.parseInt(answerString);

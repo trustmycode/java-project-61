@@ -26,7 +26,7 @@ public class Even {
             System.out.println("Question: " + randomNum);
             System.out.print("Your answer: ");
 
-            String playerAnswer = bufferedReader.readLine();
+            String playerAnswer = bufferedReader.readLine().trim();
 
             if (randomNum % 2 == 0) {
                 if (playerAnswer.equalsIgnoreCase(answerNo)) {
