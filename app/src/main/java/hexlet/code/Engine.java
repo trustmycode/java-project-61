@@ -11,7 +11,7 @@ public class Engine {
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
 
-        playerName = bufferedReader.readLine();
+        playerName = bufferedReader.readLine().trim();
 
         System.out.println("Hello, " + playerName + "!");
     }
