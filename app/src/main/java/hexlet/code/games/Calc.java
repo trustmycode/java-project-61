@@ -56,7 +56,7 @@ public class Calc {
         }
     }
 
-    public static int addition() {
+    private static int addition() {
         int firstNum = (int) (Math.random() * 100);
         int secondNum = (int) (Math.random() * 100);
         int sum = firstNum + secondNum;
@@ -66,7 +66,7 @@ public class Calc {
         return sum;
     }
 
-    public static int subtraction() {
+    private static int subtraction() {
         int firstNum = (int) (Math.random() * 100);
         int secondNum = (int) (Math.random() * 100);
         int diff = firstNum - secondNum;
@@ -76,7 +76,7 @@ public class Calc {
         return diff;
     }
 
-    public static int multiplication() {
+    private static int multiplication() {
         int firstNum = (int) (Math.random() * 100);
         int secondNum = (int) (Math.random() * 100);
         int prod = firstNum * secondNum;

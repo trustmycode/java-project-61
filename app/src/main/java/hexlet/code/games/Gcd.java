@@ -84,7 +84,7 @@ public class Gcd {
         }
     }
 
-    public static int[] searchDivisors(int num) {
+    private static int[] searchDivisors(int num) {
         int[] divisors = new int[num / 2 + 1];
         int k = 0;
         for (int i = 1; i <= num / 2; i++) {
@@ -98,7 +98,7 @@ public class Gcd {
         return divisors;
     }
 
-    public static int gdc(int[] firstArray, int[] secondArray) {
+    private static int gdc(int[] firstArray, int[] secondArray) {
         int firstArrayLength = firstArray.length;
         int secondArrayLength = secondArray.length;
         int[] commonDivisors = new int[Math.max(firstArrayLength, secondArrayLength)];
