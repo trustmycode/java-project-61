@@ -2,6 +2,7 @@ package hexlet.code;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.util.Arrays;
 
 public class Engine {
     public static String playerName;
@@ -28,5 +29,19 @@ public class Engine {
 
     public static void congratulationsMessage() {
         System.out.println("Congratulations, " + playerName);
+    }
+
+    public static int[] searchDivisors(int num, int length) {
+        int[] divisors = new int[num / 2 + 1];
+        int k = 0;
+        for (int i = 1; i <= num / 2; i++) {
+            if (num % i == 0) {
+                divisors[k] = i;
+                k++;
+            }
+        }
+        divisors[k++] = num;
+        divisors = Arrays.copyOf(divisors, k);
+        return divisors;
     }
 }
