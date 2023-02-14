@@ -32,9 +32,9 @@ public class Engine {
     }
 
     public static int[] searchDivisors(int num, int length) {
-        int[] divisors = new int[num / 2 + 1];
+        int[] divisors = new int[length];
         int k = 0;
-        for (int i = 1; i <= num / 2; i++) {
+        for (int i = 1; i <= length - 1; i++) {
             if (num % i == 0) {
                 divisors[k] = i;
                 k++;
