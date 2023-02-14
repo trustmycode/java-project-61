@@ -9,3 +9,6 @@ https://asciinema.org/a/isGL604zQyN4oIIw8Cs6foIpG
 
 ## asciinema GCD
 https://asciinema.org/a/v8qSJ8qXUQXTyR1TTpFaJQW4T
+
+## asciinema Progression
+https://asciinema.org/a/AtUQqx6I8gdzuUktnW7rFTEwu

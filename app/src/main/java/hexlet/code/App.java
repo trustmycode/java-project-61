@@ -8,6 +8,7 @@ import static hexlet.code.Engine.playerGreetings;
 import static hexlet.code.games.Calc.calcGame;
 import static hexlet.code.games.Even.evenGame;
 import static hexlet.code.games.Gcd.gcdGame;
+import static hexlet.code.games.Progression.progressionGame;
 
 public class App {
     public static void main(String[] args) throws IOException {
@@ -16,6 +17,7 @@ public class App {
         System.out.println("2 - Even");
         System.out.println("3 - Calc");
         System.out.println("4 - Gcd");
+        System.out.println("5 - Progression");
         System.out.println("0 - Exit");
         System.out.print("Your choice: ");
 
@@ -27,6 +29,7 @@ public class App {
             case (2) -> evenGame(bufferedReader);
             case (3) -> calcGame(bufferedReader);
             case (4) -> gcdGame(bufferedReader);
+            case (5) -> progressionGame(bufferedReader);
             default -> {
             }
         }
