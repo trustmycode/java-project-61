@@ -9,6 +9,7 @@ import static hexlet.code.Engine.incorrectAnswerMessage;
 import static hexlet.code.Engine.congratulationsMessage;
 
 public class Progression {
+
     static int positionOfElement;
 
     public static void progressionGame(BufferedReader bufferedReader) throws IOException {

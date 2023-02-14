@@ -8,6 +8,7 @@ import static hexlet.code.Engine.correctAnswerMessage;
 import static hexlet.code.Engine.playerGreetings;
 import static hexlet.code.Engine.incorrectAnswerMessage;
 import static hexlet.code.Engine.congratulationsMessage;
+import static hexlet.code.Engine.searchDivisors;
 
 
 public class Gcd {
@@ -21,8 +22,8 @@ public class Gcd {
         for (int i = 1; i < 4; i++) {
             int firstNum = (int) (Math.random() * 100);
             int secondNum = (int) (Math.random() * 100);
-            int[] firstDivisors = searchDivisors(firstNum);
-            int[] secondDivisors = searchDivisors(secondNum);
+            int[] firstDivisors = searchDivisors(firstNum, firstNum / 2 + 1);
+            int[] secondDivisors = searchDivisors(secondNum, secondNum / 2 + 1);
             System.out.println("Question: " + firstNum + " " + secondNum);
             System.out.print("Your answer: ");
 
@@ -82,20 +83,6 @@ public class Gcd {
                 congratulationsMessage();
             }
         }
-    }
-
-    private static int[] searchDivisors(int num) {
-        int[] divisors = new int[num / 2 + 1];
-        int k = 0;
-        for (int i = 1; i <= num / 2; i++) {
-            if (num % i == 0) {
-                divisors[k] = i;
-                k++;
-            }
-        }
-        divisors[k++] = num;
-        divisors = Arrays.copyOf(divisors, k);
-        return divisors;
     }
 
     private static int gdc(int[] firstArray, int[] secondArray) {
