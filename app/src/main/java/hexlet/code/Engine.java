@@ -17,10 +17,6 @@ public class Engine {
         System.out.println("Hello, " + playerName + "!");
     }
 
-    public static void correctAnswerMessage() {
-        System.out.println("Correct!");
-    }
-
     public static void incorrectAnswerMessage(Object correctAnswer, Object playerAnswer) {
         System.out.println("'" + playerAnswer + "' is wrong answer"
                 + " ;(. Correct answer was '" + correctAnswer + "'");

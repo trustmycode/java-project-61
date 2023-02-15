@@ -3,7 +3,6 @@ package hexlet.code.games;
 import java.io.BufferedReader;
 import java.io.IOException;
 
-import static hexlet.code.Engine.correctAnswerMessage;
 import static hexlet.code.Engine.playerGreetings;
 import static hexlet.code.Engine.incorrectAnswerMessage;
 import static hexlet.code.Engine.congratulationsMessage;
@@ -30,15 +29,14 @@ public class Even {
 
             if (randomNum % 2 == 0) {
                 if (playerAnswer.equalsIgnoreCase(answerNo)) {
-                    correctAnswerMessage();
+                    System.out.println("Correct!");
                 } else {
                     incorrectAnswerMessage(answerNo, playerAnswer);
                     break;
                 }
             } else {
                 if (playerAnswer.equalsIgnoreCase(answerYes)) {
-                    correctAnswerMessage();
-
+                    System.out.println("Correct!");
                 } else {
                     incorrectAnswerMessage(answerYes, playerAnswer);
                     break;

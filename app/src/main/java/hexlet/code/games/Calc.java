@@ -3,7 +3,6 @@ package hexlet.code.games;
 import java.io.BufferedReader;
 import java.io.IOException;
 
-import static hexlet.code.Engine.correctAnswerMessage;
 import static hexlet.code.Engine.playerGreetings;
 import static hexlet.code.Engine.incorrectAnswerMessage;
 import static hexlet.code.Engine.congratulationsMessage;
@@ -45,7 +44,7 @@ public class Calc {
             }
 
             if (playerAnswer == correctAnswer) {
-                correctAnswerMessage();
+                System.out.println("Correct!");
             } else {
                 incorrectAnswerMessage(correctAnswer, playerAnswer);
                 break;
