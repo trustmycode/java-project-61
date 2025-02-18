@@ -2,13 +2,9 @@ import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 import org.gradle.api.tasks.testing.logging.TestLogEvent
 
 plugins {
-    java
     application
-    jacoco
     id("checkstyle")
-    id("io.freefair.lombok") version "8.6"
     id("com.github.ben-manes.versions") version "0.50.0"
-    id("com.github.johnrengelman.shadow") version "8.1.1"
 }
 
 group = "hexlet.code"
@@ -37,5 +33,3 @@ tasks.test {
         showStandardStreams = true
     }
 }
-
-tasks.jacocoTestReport { reports { xml.required.set(true) } }
