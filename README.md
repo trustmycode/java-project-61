@@ -1,3 +1,8 @@
+# java-project-61
+
+![Java CI](https://github.com/trustmycode/java-project-61/workflows/Java%20CI/badge.svg)
+[![Maintainability](https://api.codeclimate.com/v1/badges/a79a40a8baace78592bc/maintainability)](https://codeclimate.com/github/trustmycode/java-project-61/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/a79a40a8baace78592bc/test_coverage)](https://codeclimate.com/github/trustmycode/java-project-61/test_coverage)
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/trustmycode/java-project-61/workflows/hexlet-check/badge.svg)](https://github.com/trustmycode/java-project-61/actions)
 

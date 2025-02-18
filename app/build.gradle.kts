@@ -3,6 +3,7 @@ import org.gradle.api.tasks.testing.logging.TestLogEvent
 
 plugins {
     application
+    jacoco
     id("checkstyle")
     id("com.github.ben-manes.versions") version "0.50.0"
 }
