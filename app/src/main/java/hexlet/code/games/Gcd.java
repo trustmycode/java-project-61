@@ -1,23 +1,24 @@
 package hexlet.code.games;
 
-import java.io.BufferedReader;
+import static hexlet.code.Engine.congratulationsMessage;
+import static hexlet.code.Engine.incorrectAnswerMessage;
+import static hexlet.code.Engine.playerGreetings;
+import static hexlet.code.Engine.searchDivisors;
+
 import java.io.IOException;
 import java.util.Arrays;
-
-import static hexlet.code.Engine.playerGreetings;
-import static hexlet.code.Engine.incorrectAnswerMessage;
-import static hexlet.code.Engine.congratulationsMessage;
-import static hexlet.code.Engine.searchDivisors;
+import java.util.Scanner;
 
 
 public class Gcd {
 
-    public static void gcdGame(BufferedReader bufferedReader) throws IOException {
+    public static void gcdGame() throws IOException {
 
-        playerGreetings(bufferedReader);
+        playerGreetings();
 
         System.out.println("Find the greatest common divisor of given numbers.");
         int correctAnswer;
+        Scanner scanner = new Scanner(System.in);
         for (int i = 1; i < 4; i++) {
             int firstNum = (int) (Math.random() * 100);
             int secondNum = (int) (Math.random() * 100);
@@ -26,7 +27,7 @@ public class Gcd {
             System.out.println("Question: " + firstNum + " " + secondNum);
             System.out.print("Your answer: ");
 
-            String answerString = bufferedReader.readLine().trim();
+            String answerString = scanner.next();
             int playerAnswer;
 
             if (firstNum % secondNum == 0) {

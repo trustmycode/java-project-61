@@ -7,9 +7,8 @@ import static hexlet.code.games.Gcd.gcdGame;
 import static hexlet.code.games.Prime.primeGame;
 import static hexlet.code.games.Progression.progressionGame;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
+import java.util.Scanner;
 
 public class App {
 
@@ -25,18 +24,16 @@ public class App {
             System.out.println("0 - Exit");
             System.out.print("Your choice: ");
 
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-            int numberOfGame = Integer.parseInt(bufferedReader.readLine());
+            Scanner scanner = new Scanner(System.in);
+            int numberOfGame = scanner.nextInt();
             switch (numberOfGame) {
-                case (1) -> playerGreetings(bufferedReader);
-                case (2) -> evenGame(bufferedReader);
-                case (3) -> calcGame(bufferedReader);
-                case (4) -> gcdGame(bufferedReader);
-                case (5) -> progressionGame(bufferedReader);
-                case (6) -> primeGame(bufferedReader);
+                case (1) -> playerGreetings();
+                case (2) -> evenGame();
+                case (3) -> calcGame();
+                case (4) -> gcdGame();
+                case (5) -> progressionGame();
+                case (6) -> primeGame();
                 case (0) -> System.exit(0);
-                default -> {
-                }
             }
         }
     }

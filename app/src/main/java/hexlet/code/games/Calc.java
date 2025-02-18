@@ -1,40 +1,33 @@
 package hexlet.code.games;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-
-import static hexlet.code.Engine.playerGreetings;
-import static hexlet.code.Engine.incorrectAnswerMessage;
 import static hexlet.code.Engine.congratulationsMessage;
+import static hexlet.code.Engine.incorrectAnswerMessage;
+import static hexlet.code.Engine.playerGreetings;
+
+import java.io.IOException;
+import java.util.Scanner;
 
 public class Calc {
 
-    public static void calcGame(BufferedReader bufferedReader) throws IOException {
+    public static void calcGame() throws IOException {
 
-        playerGreetings(bufferedReader);
+        playerGreetings();
 
         System.out.println("What is the result of the expression?");
+        Scanner scanner = new Scanner(System.in);
 
         for (int i = 1; i < 4; i++) {
             int chooseExpression = (int) (Math.random() * 3 + 1);
-            int correctAnswer;
-            switch (chooseExpression) {
-                case (1):
-                    correctAnswer = addition();
-                    break;
-                case (2):
-                    correctAnswer = subtraction();
-                    break;
-                case (3):
-                    correctAnswer = multiplication();
-                    break;
-                default:
-                    throw new IllegalStateException("Unexpected value: " + chooseExpression);
-            }
+            int correctAnswer = switch (chooseExpression) {
+                case (1) -> addition();
+                case (2) -> subtraction();
+                case (3) -> multiplication();
+                default -> throw new IllegalStateException("Unexpected value: " + chooseExpression);
+            };
 
             System.out.print("Your answer: ");
 
-            String answerString = bufferedReader.readLine().trim();
+            String answerString = scanner.next();
             int playerAnswer;
             try {
                 playerAnswer = Integer.parseInt(answerString);

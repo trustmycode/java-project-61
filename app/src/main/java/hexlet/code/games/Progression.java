@@ -1,11 +1,11 @@
 package hexlet.code.games;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-
-import static hexlet.code.Engine.playerGreetings;
-import static hexlet.code.Engine.incorrectAnswerMessage;
 import static hexlet.code.Engine.congratulationsMessage;
+import static hexlet.code.Engine.incorrectAnswerMessage;
+import static hexlet.code.Engine.playerGreetings;
+
+import java.io.IOException;
+import java.util.Scanner;
 
 public class Progression {
 
@@ -13,18 +13,19 @@ public class Progression {
     static int progressionLength;
     static int correctAnswer;
 
-    public static void progressionGame(BufferedReader bufferedReader) throws IOException {
+    public static void progressionGame() throws IOException {
 
-        playerGreetings(bufferedReader);
+        playerGreetings();
 
         System.out.println("What number is missing in the progression?");
+        Scanner scanner = new Scanner(System.in);
 
         for (int i = 1; i < 4; i++) {
             question();
 
             System.out.print("Your answer: ");
 
-            String answerString = bufferedReader.readLine();
+            String answerString = scanner.next();
             int playerAnswer;
 
             try {
