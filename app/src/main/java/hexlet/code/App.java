@@ -32,7 +32,7 @@ public class App {
             case (4) -> gcdGame();
             case (5) -> progressionGame();
             case (6) -> primeGame();
-            case (0) -> System.exit(0);
+            default -> System.exit(0);
         }
     }
 }
