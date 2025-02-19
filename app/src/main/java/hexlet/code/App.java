@@ -23,15 +23,23 @@ public class App {
         System.out.println("0 - Exit");
 
         Scanner scanner = new Scanner(System.in);
-        int numberOfGame = scanner.nextInt();
+        String numberOfGame = scanner.next();
         System.out.print("Your choice: " + numberOfGame);
+
+        final String greetings = "1";
+        final String gameEven = "2";
+        final String gameCalc = "3";
+        final String gameGcd = "4";
+        final String gameProgression = "5";
+        final String gamePrime = "6";
+
         switch (numberOfGame) {
-            case (1) -> playerGreetings();
-            case (2) -> evenGame();
-            case (3) -> calcGame();
-            case (4) -> gcdGame();
-            case (5) -> progressionGame();
-            case (6) -> primeGame();
+            case greetings -> playerGreetings();
+            case gameEven -> evenGame();
+            case gameCalc -> calcGame();
+            case gameGcd -> gcdGame();
+            case gameProgression -> progressionGame();
+            case gamePrime -> primeGame();
             default -> System.exit(0);
         }
     }

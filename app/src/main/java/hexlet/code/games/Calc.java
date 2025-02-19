@@ -9,6 +9,11 @@ import java.util.Scanner;
 
 public class Calc {
 
+    private static final int RANDOM_FACTOR = 100;
+
+    public int getRandomFactor() {
+        return RANDOM_FACTOR;
+    }
     public static void calcGame() throws IOException {
 
         playerGreetings();
@@ -16,8 +21,10 @@ public class Calc {
         System.out.println("What is the result of the expression?");
         Scanner scanner = new Scanner(System.in);
 
-        for (int i = 1; i < 4; i++) {
-            int chooseExpression = (int) (Math.random() * 3 + 1);
+        int numOfRounds = 3;
+        int randomFactor = 3;
+        for (int i = 0; i < numOfRounds; i++) {
+            int chooseExpression = (int) (Math.random() * randomFactor + 1);
             int correctAnswer = switch (chooseExpression) {
                 case (1) -> addition();
                 case (2) -> subtraction();
@@ -42,15 +49,15 @@ public class Calc {
                 incorrectAnswerMessage(correctAnswer, playerAnswer);
                 break;
             }
-            if (i == 3) {
+            if (i == numOfRounds - 1) {
                 congratulationsMessage();
             }
         }
     }
 
     private static int addition() {
-        int firstNum = (int) (Math.random() * 100);
-        int secondNum = (int) (Math.random() * 100);
+        int firstNum = (int) (Math.random() * RANDOM_FACTOR);
+        int secondNum = (int) (Math.random() * RANDOM_FACTOR);
         int sum = firstNum + secondNum;
 
         System.out.println("Question: " + firstNum + " + " + secondNum);
@@ -59,8 +66,8 @@ public class Calc {
     }
 
     private static int subtraction() {
-        int firstNum = (int) (Math.random() * 100);
-        int secondNum = (int) (Math.random() * 100);
+        int firstNum = (int) (Math.random() * RANDOM_FACTOR);
+        int secondNum = (int) (Math.random() * RANDOM_FACTOR);
         int diff = firstNum - secondNum;
 
         System.out.println("Question: " + firstNum + " - " + secondNum);
@@ -69,8 +76,8 @@ public class Calc {
     }
 
     private static int multiplication() {
-        int firstNum = (int) (Math.random() * 100);
-        int secondNum = (int) (Math.random() * 100);
+        int firstNum = (int) (Math.random() * RANDOM_FACTOR);
+        int secondNum = (int) (Math.random() * RANDOM_FACTOR);
         int prod = firstNum * secondNum;
 
         System.out.println("Question: " + firstNum + " * " + secondNum);

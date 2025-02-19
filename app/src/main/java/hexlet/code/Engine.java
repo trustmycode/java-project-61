@@ -6,7 +6,15 @@ import java.util.Scanner;
 
 public class Engine {
 
-    public static String playerName;
+    public static String getPlayerName() {
+        return playerName;
+    }
+
+    public static void setPlayerName(String playerName) {
+        Engine.playerName = playerName;
+    }
+
+    private static String playerName;
 
     public static void playerGreetings() throws IOException {
         System.out.println();

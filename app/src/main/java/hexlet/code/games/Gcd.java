@@ -19,9 +19,11 @@ public class Gcd {
         System.out.println("Find the greatest common divisor of given numbers.");
         int correctAnswer;
         Scanner scanner = new Scanner(System.in);
-        for (int i = 1; i < 4; i++) {
-            int firstNum = (int) (Math.random() * 100);
-            int secondNum = (int) (Math.random() * 100);
+        int numOfRounds = 3;
+        int randomFactor = 100;
+        for (int i = 0; i < numOfRounds; i++) {
+            int firstNum = (int) (Math.random() * randomFactor);
+            int secondNum = (int) (Math.random() * randomFactor);
             int[] firstDivisors = searchDivisors(firstNum, firstNum / 2 + 1);
             int[] secondDivisors = searchDivisors(secondNum, secondNum / 2 + 1);
             System.out.println("Question: " + firstNum + " " + secondNum);
@@ -79,7 +81,7 @@ public class Gcd {
                     break;
                 }
             }
-            if (i == 3) {
+            if (i == numOfRounds - 1) {
                 congratulationsMessage();
             }
         }
@@ -92,10 +94,10 @@ public class Gcd {
         int commonDivisorsLength = commonDivisors.length;
         int k = 0;
         int gdc = 1;
-        for (int i = 0; i < firstArrayLength; i++) {
-            for (int j = 0; j < secondArrayLength; j++) {
-                if (firstArray[i] == secondArray[j]) {
-                    commonDivisors[k] = firstArray[i];
+        for (int firstArrayValue : firstArray) {
+            for (int secondArrayValue : secondArray) {
+                if (firstArrayValue == secondArrayValue) {
+                    commonDivisors[k] = firstArrayValue;
                     k++;
                 }
             }

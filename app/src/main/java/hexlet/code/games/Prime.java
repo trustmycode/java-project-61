@@ -21,8 +21,10 @@ public class Prime {
         String playerAnswer;
         Scanner scanner = new Scanner(System.in);
 
-        for (int i = 1; i < 4; i++) {
-            int number = (int) (Math.random() * 99 + 2);
+        int numOfRounds = 3;
+        int randomFactor = 99;
+        for (int i = 0; i < numOfRounds; i++) {
+            int number = (int) (Math.random() * randomFactor + 2);
             if (isPrime(number)) {
                 correctAnswer = "yes";
             } else {
@@ -38,7 +40,7 @@ public class Prime {
                 incorrectAnswerMessage(correctAnswer, playerAnswer);
                 break;
             }
-            if (i == 3) {
+            if (i == numOfRounds - 1) {
                 congratulationsMessage();
             }
         }

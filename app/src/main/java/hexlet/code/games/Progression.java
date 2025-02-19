@@ -9,9 +9,7 @@ import java.util.Scanner;
 
 public class Progression {
 
-    static int positionOfElement;
-    static int progressionLength;
-    static int correctAnswer;
+    private static int correctAnswer;
 
     public static void progressionGame() throws IOException {
 
@@ -20,7 +18,8 @@ public class Progression {
         System.out.println("What number is missing in the progression?");
         Scanner scanner = new Scanner(System.in);
 
-        for (int i = 1; i < 4; i++) {
+        int numOfRounds = 3;
+        for (int i = 0; i < numOfRounds; i++) {
             question();
 
             System.out.print("Your answer: ");
@@ -41,28 +40,30 @@ public class Progression {
                 incorrectAnswerMessage(correctAnswer, playerAnswer);
                 break;
             }
-            if (i == 3) {
+            if (i == numOfRounds - 1) {
                 congratulationsMessage();
             }
         }
     }
 
     private static void question() {
-        progressionLength = (int) (Math.random() * (10 - 5 + 1) + 5);
-        positionOfElement = (int) (Math.random() * progressionLength);
-        String arithmeticProgression = ("Question: ");
-        int progressionDifference = (int) (Math.random() * 31 + 1);
+        int rightBoard = 10;
+        int leftBoard = 5;
+        int randomFactor = 31;
+        int progressionLength = (int) (Math.random() * (rightBoard - leftBoard + 1) + leftBoard);
+        int positionOfElement = (int) (Math.random() * progressionLength);
+        StringBuilder arithmeticProgression = new StringBuilder(("Question: "));
+        int progressionDifference = (int) (Math.random() * randomFactor + 1);
         int firstNum = (int) (Math.random() * 101);
         for (int i = 0; i < progressionLength; i++) {
             if (i != positionOfElement) {
-                arithmeticProgression += firstNum + " ";
-                firstNum += progressionDifference;
+                arithmeticProgression.append(firstNum).append(" ");
             } else {
-                arithmeticProgression += ".. ";
+                arithmeticProgression.append(".. ");
                 correctAnswer = firstNum;
-                firstNum += progressionDifference;
             }
+            firstNum += progressionDifference;
         }
-        System.out.println(arithmeticProgression.trim());
+        System.out.println(arithmeticProgression.toString().trim());
     }
 }

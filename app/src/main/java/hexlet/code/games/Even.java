@@ -19,8 +19,10 @@ public class Even {
 
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         Scanner scanner = new Scanner(System.in);
-        for (int i = 1; i < 4; i++) {
-            randomNum = (int) (Math.random() * 100);
+        int numOfRounds = 3;
+        int randomFactor = 100;
+        for (int i = 0; i < numOfRounds; i++) {
+            randomNum = (int) (Math.random() * randomFactor);
 
             System.out.println("Question: " + randomNum);
             System.out.print("Your answer: ");
@@ -42,7 +44,7 @@ public class Even {
                     break;
                 }
             }
-            if (i == 3) {
+            if (i == numOfRounds - 1) {
                 congratulationsMessage();
             }
         }
