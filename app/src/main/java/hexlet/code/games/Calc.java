@@ -9,11 +9,14 @@ import java.util.Scanner;
 
 public class Calc {
 
-    private static final int RANDOM_FACTOR = 100;
+    private static final int RANGE_OF_SELECTION_OF_NUMBERS = 100;
+    private static final int NUM_OF_ROUNDS = 3;
+    private static final int FACTOR_OF_EXPRESSION = 3;
 
-    public int getRandomFactor() {
-        return RANDOM_FACTOR;
+    public static int getRandomFactor() {
+        return RANGE_OF_SELECTION_OF_NUMBERS;
     }
+
     public static void calcGame() throws IOException {
 
         playerGreetings();
@@ -21,14 +24,15 @@ public class Calc {
         System.out.println("What is the result of the expression?");
         Scanner scanner = new Scanner(System.in);
 
-        int numOfRounds = 3;
-        int randomFactor = 3;
-        for (int i = 0; i < numOfRounds; i++) {
-            int chooseExpression = (int) (Math.random() * randomFactor + 1);
+        final int addExpression = 1;
+        final int subExpression = 2;
+        final int multExpression = 3;
+        for (int i = 0; i < NUM_OF_ROUNDS; i++) {
+            int chooseExpression = (int) (Math.random() * FACTOR_OF_EXPRESSION + 1);
             int correctAnswer = switch (chooseExpression) {
-                case (1) -> addition();
-                case (2) -> subtraction();
-                case (3) -> multiplication();
+                case addExpression -> addition();
+                case subExpression -> subtraction();
+                case multExpression -> multiplication();
                 default -> throw new IllegalStateException("Unexpected value: " + chooseExpression);
             };
 
@@ -49,15 +53,15 @@ public class Calc {
                 incorrectAnswerMessage(correctAnswer, playerAnswer);
                 break;
             }
-            if (i == numOfRounds - 1) {
+            if (i == NUM_OF_ROUNDS - 1) {
                 congratulationsMessage();
             }
         }
     }
 
     private static int addition() {
-        int firstNum = (int) (Math.random() * RANDOM_FACTOR);
-        int secondNum = (int) (Math.random() * RANDOM_FACTOR);
+        int firstNum = (int) (Math.random() * RANGE_OF_SELECTION_OF_NUMBERS);
+        int secondNum = (int) (Math.random() * RANGE_OF_SELECTION_OF_NUMBERS);
         int sum = firstNum + secondNum;
 
         System.out.println("Question: " + firstNum + " + " + secondNum);
@@ -66,8 +70,8 @@ public class Calc {
     }
 
     private static int subtraction() {
-        int firstNum = (int) (Math.random() * RANDOM_FACTOR);
-        int secondNum = (int) (Math.random() * RANDOM_FACTOR);
+        int firstNum = (int) (Math.random() * RANGE_OF_SELECTION_OF_NUMBERS);
+        int secondNum = (int) (Math.random() * RANGE_OF_SELECTION_OF_NUMBERS);
         int diff = firstNum - secondNum;
 
         System.out.println("Question: " + firstNum + " - " + secondNum);
@@ -76,8 +80,8 @@ public class Calc {
     }
 
     private static int multiplication() {
-        int firstNum = (int) (Math.random() * RANDOM_FACTOR);
-        int secondNum = (int) (Math.random() * RANDOM_FACTOR);
+        int firstNum = (int) (Math.random() * RANGE_OF_SELECTION_OF_NUMBERS);
+        int secondNum = (int) (Math.random() * RANGE_OF_SELECTION_OF_NUMBERS);
         int prod = firstNum * secondNum;
 
         System.out.println("Question: " + firstNum + " * " + secondNum);

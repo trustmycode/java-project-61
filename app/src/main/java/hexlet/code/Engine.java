@@ -10,10 +10,6 @@ public class Engine {
         return playerName;
     }
 
-    public static void setPlayerName(String playerName) {
-        Engine.playerName = playerName;
-    }
-
     private static String playerName;
 
     public static void playerGreetings() throws IOException {

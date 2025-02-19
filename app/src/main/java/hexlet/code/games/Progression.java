@@ -18,7 +18,7 @@ public class Progression {
         System.out.println("What number is missing in the progression?");
         Scanner scanner = new Scanner(System.in);
 
-        int numOfRounds = 3;
+        final int numOfRounds = 3;
         for (int i = 0; i < numOfRounds; i++) {
             question();
 
@@ -47,14 +47,20 @@ public class Progression {
     }
 
     private static void question() {
-        int rightBoard = 10;
-        int leftBoard = 5;
-        int randomFactor = 31;
-        int progressionLength = (int) (Math.random() * (rightBoard - leftBoard + 1) + leftBoard);
+        final int maxLengthOfProgression = 10;
+        final int minLengthOfProgression = 5;
+        final int randomFactorOfProgressionDifference = 31;
+        final int randomFactorOfChooseFirstNum = 101;
+
+        int progressionLength = (int) (
+            Math.random() * (maxLengthOfProgression - minLengthOfProgression + 1)
+                + minLengthOfProgression);
         int positionOfElement = (int) (Math.random() * progressionLength);
+
         StringBuilder arithmeticProgression = new StringBuilder(("Question: "));
-        int progressionDifference = (int) (Math.random() * randomFactor + 1);
-        int firstNum = (int) (Math.random() * 101);
+
+        int progressionDifference = (int) (Math.random() * randomFactorOfProgressionDifference + 1);
+        int firstNum = (int) (Math.random() * randomFactorOfChooseFirstNum);
         for (int i = 0; i < progressionLength; i++) {
             if (i != positionOfElement) {
                 arithmeticProgression.append(firstNum).append(" ");

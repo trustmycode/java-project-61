@@ -19,11 +19,11 @@ public class Gcd {
         System.out.println("Find the greatest common divisor of given numbers.");
         int correctAnswer;
         Scanner scanner = new Scanner(System.in);
-        int numOfRounds = 3;
-        int randomFactor = 100;
+        final int numOfRounds = 3;
+        final int rangeOfSelectionOfNumbers = 100;
         for (int i = 0; i < numOfRounds; i++) {
-            int firstNum = (int) (Math.random() * randomFactor);
-            int secondNum = (int) (Math.random() * randomFactor);
+            int firstNum = (int) (Math.random() * rangeOfSelectionOfNumbers);
+            int secondNum = (int) (Math.random() * rangeOfSelectionOfNumbers);
             int[] firstDivisors = searchDivisors(firstNum, firstNum / 2 + 1);
             int[] secondDivisors = searchDivisors(secondNum, secondNum / 2 + 1);
             System.out.println("Question: " + firstNum + " " + secondNum);
