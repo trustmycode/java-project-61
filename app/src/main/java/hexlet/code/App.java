@@ -21,10 +21,10 @@ public class App {
         System.out.println("5 - Progression");
         System.out.println("6 - Prime");
         System.out.println("0 - Exit");
-        System.out.print("Your choice: ");
 
         Scanner scanner = new Scanner(System.in);
         int numberOfGame = scanner.nextInt();
+        System.out.print("Your choice: " + numberOfGame);
         switch (numberOfGame) {
             case (1) -> playerGreetings();
             case (2) -> evenGame();
