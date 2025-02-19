@@ -28,14 +28,14 @@ public class Even {
             String playerAnswer = scanner.next();
 
             if (randomNum % 2 == 0) {
-                if (playerAnswer.equalsIgnoreCase(answerNo)) {
+                if (playerAnswer.equalsIgnoreCase(answerYes)) {
                     System.out.println("Correct!");
                 } else {
                     incorrectAnswerMessage(answerNo, playerAnswer);
                     break;
                 }
             } else {
-                if (playerAnswer.equalsIgnoreCase(answerYes)) {
+                if (playerAnswer.equalsIgnoreCase(answerNo)) {
                     System.out.println("Correct!");
                 } else {
                     incorrectAnswerMessage(answerYes, playerAnswer);
