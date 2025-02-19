@@ -19,10 +19,10 @@ public class Even {
 
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         Scanner scanner = new Scanner(System.in);
-        int numOfRounds = 3;
-        int randomFactor = 100;
+        final int numOfRounds = 3;
+        final int rangeOfSelectionOfNumbers = 100;
         for (int i = 0; i < numOfRounds; i++) {
-            randomNum = (int) (Math.random() * randomFactor);
+            randomNum = (int) (Math.random() * rangeOfSelectionOfNumbers);
 
             System.out.println("Question: " + randomNum);
             System.out.print("Your answer: ");
