@@ -25,7 +25,7 @@ public class Engine {
     }
 
     public static void congratulationsMessage() {
-        System.out.println("Congratulations, " + playerName);
+        System.out.println("Congratulations, " + playerName + "!");
     }
 
     public static int[] searchDivisors(int num, int length) {
