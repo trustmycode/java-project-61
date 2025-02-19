@@ -21,7 +21,7 @@ public class Engine {
     public static void incorrectAnswerMessage(Object correctAnswer, Object playerAnswer) {
         System.out.println("'" + playerAnswer + "' is wrong answer"
             + " ;(. Correct answer was '" + correctAnswer + "'");
-        System.out.println("Let's try again, " + playerName);
+        System.out.println("Let's try again, " + playerName + "!");
     }
 
     public static void congratulationsMessage() {
